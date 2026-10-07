@@ -8,11 +8,18 @@
 
 <div class="header">
     <div class="logo">
-        TANJ <span>User Management</span>
+        TANJ <span>Task Management</span>
     </div>
     <div class="nav">
-        <a href="<?= base_url('auth/login') ?>">Login</a>
-        <a href="<?= base_url('auth/register') ?>">Create Account</a>
+        <a href="/">Today</a>
+        <a href="/tasks">All Tasks</a>
+        <a href="/profile">Profile</a>
+        <a href="/about">About</a>
+        <?php if (session()->get('logged_in')): ?>
+            <a href="/logout">Logout</a>
+        <?php else: ?>
+            <a href="/login">Login</a>
+        <?php endif; ?>
     </div>
 </div>
 
@@ -20,28 +27,28 @@
 
 <div class="hero">
     <h1>Welcome to TANJ</h1>
-    <p>Your Secure User Management System</p>
+    <p>Your Secure Task Management System</p>
 </div>
 
 <div class="features">
     <div class="feature">
-        <h3>🔐 Secure</h3>
-        <p>Advanced security features to protect your data and user information.</p>
+        <h3>� Task Management</h3>
+        <p>Easily create, edit, and manage your daily tasks with our intuitive interface.</p>
     </div>
     <div class="feature">
-        <h3>👥 User Management</h3>
-        <p>Easy-to-use admin panel for managing users and permissions.</p>
+        <h3>� Secure Authentication</h3>
+        <p>Protected access to ensure your tasks and data remain private and secure.</p>
     </div>
     <div class="feature">
-        <h3>⚡ Fast</h3>
-        <p>Lightweight and efficient system built for optimal performance.</p>
+        <h3>⚡ Fast & Efficient</h3>
+        <p>Lightweight system built for optimal performance and user experience.</p>
     </div>
 </div>
 
 <div class="cta">
     <div class="cta-buttons">
-        <a href="<?= base_url('auth/login') ?>" class="btn">Login</a>
-        <a href="<?= base_url('auth/register') ?>" class="btn btn-secondary">Create Account</a>
+        <a href="/tasks" class="btn">View Tasks</a>
+        <a href="/login" class="btn btn-secondary">Login</a>
     </div>
 </div>
 

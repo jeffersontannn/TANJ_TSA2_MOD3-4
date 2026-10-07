@@ -15,6 +15,11 @@
         <a href="/tasks">All Tasks</a>
         <a href="/profile">Profile</a>
         <a href="/about">About</a>
+        <?php if (session()->get('logged_in')): ?>
+            <a href="/logout">Logout</a>
+        <?php else: ?>
+            <a href="/login">Login</a>
+        <?php endif; ?>
     </div>
 </div>
 
